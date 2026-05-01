@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salju 津田沼</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      background: #fffafc;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+      min-height: 100vh;
+    }
+
+    .hero-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 28px 18px 40px;
+    }
+
+    .shop-name {
+      text-align: center;
+      font-size: 32px;
+      color: #7b4b61;
+      margin: 0 0 4px;
+      letter-spacing: 0.06em;
+    }
+
+    .sub-text {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      margin: 0 0 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .main-btn {
+      background: #7b4b61;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .sub-btn {
+      background: #f4f4f4;
+      color: #555;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .feature-card {
+      background: #f7f7f7;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .feature-text {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-bottom: 28px;
+      background: #fff;
+      border: 1px solid #f1dfe6;
+      border-radius: 18px;
+      padding: 18px 16px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      color: #7b4b61;
+      border-bottom: 1px solid #f3dfe7;
+      padding-bottom: 8px;
+      margin: 0 0 14px;
+    }
+
+    .menu-item {
+      padding: 12px 0;
+      border-bottom: 1px dashed #ead6de;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .menu-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .menu-name {
+      flex: 1;
+      font-weight: 600;
+      color: #444;
+      font-size: 15px;
+    }
+
+    .menu-price {
+      font-weight: 700;
+      color: #7b4b61;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .menu-time {
+      font-size: 13px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .coupon-card {
+      padding: 16px;
+      border: 1px solid #f1dfe6;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      background: #fffafb;
+    }
+
+    .coupon-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .coupon-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .coupon-price-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .coupon-original {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 14px;
+      margin-right: 6px;
+    }
+
+    .coupon-arrow {
+      color: #999;
+      margin-right: 6px;
+    }
+
+    .coupon-sale {
+      color: #e63946;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    .coupon-desc {
+      font-size: 14px;
+      color: #666;
+      margin-top: 6px;
+      line-height: 1.7;
+    }
+
+    .coupon-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .coupon-label {
+      display: inline-block;
+      background: #f3e4ea;
+      color: #7b4b61;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      margin-right: 4px;
+      font-weight: 700;
+    }
+
+    .notice {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .access-box {
+      margin-top: 40px;
+      padding: 25px;
+      background: #fff5f8;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #f3dfe7;
+    }
+
+    .access-title {
+      margin: 0 0 10px;
+      color: #7b4b61;
+      font-size: 20px;
+    }
+
+    .map-btn {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #7b4b61;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 22px 14px 32px;
+      }
+
+      .shop-name {
+        font-size: 28px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 18px;
+      }
+
+      .coupon-sale {
+        font-size: 20px;
+      }
+
+      .menu-name,
+      .menu-price {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="menu.jpg" alt="Salju メイン画像" class="hero-image" />
+
+    <div class="content">
+      <h1 class="shop-name">Salju</h1>
+      <p class="sub-text">津田沼 美容室</p>
+
+      <div class="hero-buttons">
+        <a href="#popular-coupon" class="main-btn">人気クーポン</a>
+        <a href="#access" class="sub-btn">アクセス</a>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-title">髪質改善</div>
+          <div class="feature-text">艶・まとまり重視の方におすすめ</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-title">エクステ</div>
+          <div class="feature-text">最高級レミー毛シールエクステ対応</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-title">メンズ対応</div>
+          <div class="feature-text">カット・パーマ・縮毛矯正まで対応</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-title">22時まで営業</div>
+          <div class="feature-text">お仕事帰りにも通いやすい営業時間</div>
+        </div>
+      </div>
+
+      <section class="section" id="popular-coupon">
+        <h2 class="section-title">人気クーポン</h2>
+
+        <div class="coupon-card">
+          <div class="coupon-title">≪新規限定≫ カット＋全体カラー＋髪質改善 </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥18,700</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥11,220</span>
+          </div>
+          <div class="coupon-desc">
+            新規限定クーポンです。通常料金から40％以上OFFのお得なクーポンになります。ロング料金なし
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>2時間半
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">レミー毛最高級シールエクステ60枚＋なじませカット付  </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥26,400</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥20,460</span>
+          </div>
+          <div class="coupon-desc">
+            レミー毛最高級シールエクステ＋なじませカット付 80枚￥26,400・60枚￥20,460・40枚￥14,300　ハイトーンエクステは＋¥1,100になります。
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>masashi<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>2時間
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">≪新規限定≫カット＋縮毛矯正＋髪質改善トリートメント </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥27,500</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥19,250</span>
+          </div>
+          <div class="coupon-desc">
+            新規限定クーポン☆通常料金から30％OFFのお得なクーポン・ロング料金なし・全体縮毛矯正のクーポン
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>3時間半
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">通常クーポン</h2>
+
+        <div class="coupon-card">
+          <div class="coupon-title">【学割U24限定】カット＋カラー＋髪質改善２ステップトリートメント</div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥17,600</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥10,780</span>
+          </div>
+          <div class="coupon-desc">
+            24歳以下限定のお得なクーポン。ロング料金なし　イルミナカラー変更は＋¥2,200髪質改善5ステップ変更は＋¥3,300円
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>2時間半
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">【学割U24限定】カット＋髪質改善２ステップトリートメント</div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥7,920</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥4,620</span>
+          </div>
+          <div class="coupon-desc">
+            当日限定お得メニュー。髪質改善5ステップトリートメント変更は＋¥3300
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時～19時<br>
+            <span class="coupon-label">対象スタイリスト</span>Kazu<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>1時間
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">≪新規限定≫ カット＋髪質改善 </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥11,000</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥6,600</span>
+          </div>
+          <div class="coupon-desc">
+            新規様限定クーポン☆ 通常価格の40％OFFでご利用いただけます
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>指定なし<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>1時間半
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">≪新規様限定≫全体カラー＋髪質改善トリートメント </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥13,200</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥9,240</span>
+          </div>
+          <div class="coupon-desc">
+            新規様限定クーポンです☆通常料金から30％OFFのお得なクーポンになります。イルミナカラー変更は＋¥2,200円　ロング料金なし
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>指定なし<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>2時間
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">カット＋全体カラー</div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥15,400</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥13,200</span>
+          </div>
+          <div class="coupon-desc">
+            対象：全員
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用可能<br>
+            <span class="coupon-label">施術目安</span>2時間半
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">イルミナ全体カラー【シャンプーブロー込み】 </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥11,000</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥9,900</span>
+          </div>
+          <div class="coupon-desc">
+            対象者：全員
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>2時間
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">カット+全体カラー+レミー毛シールエクステ60枚</div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥31,900</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥26,840</span>
+          </div>
+          <div class="coupon-desc">
+            なじませカット付き ハイトーンエクステは+¥1,100 頂戴いたします。
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時以降<br>
+            <span class="coupon-label">対象スタイリスト</span>masashi<br>
+            <span class="coupon-label">その他条件</span>クーポン併用不可<br>
+            <span class="coupon-label">施術目安</span>3時間半
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">当日限定 メンズカット￥3,300 </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥4,950</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥3,300</span>
+          </div>
+          <div class="coupon-desc">
+            当日限定メニュー・シャンプーは＋660円で施術可能です。
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時～19時<br>
+            <span class="coupon-label">対象スタイリスト</span>Kazu<br>
+            <span class="coupon-label">施術目安</span>30分
+          </div>
+        </div>
+
+        <div class="coupon-card">
+          <div class="coupon-title">≪メンズ限定≫メンズカット </div>
+          <div class="coupon-price-row">
+            <span class="coupon-original">定価 ¥4,950</span>
+            <span class="coupon-arrow">→</span>
+            <span class="coupon-sale">¥4,455</span>
+          </div>
+          <div class="coupon-desc">
+            通常料金から10％OFFのお得なクーポン。シャンプ-・スタイリング込み
+          </div>
+          <div class="coupon-note">
+            <span class="coupon-label">来店日条件</span>10時～20時<br>
+            <span class="coupon-label">対象スタイリスト</span>全員<br>
+            <span class="coupon-label">その他条件</span>クーポン併用可能・男性限定<br>
+            <span class="coupon-label">施術目安</span>1時間
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">髪質改善通常メニュー</h2>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">髪質改善酸熱トリートメント(シャンプー込み) </div>
+            <div class="menu-price">¥14,300</div>
+          </div>
+          <div class="menu-time">90分</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">髪質改善5ステップトリートメント（シャンプー込み）</div>
+            <div class="menu-price">¥5,500</div>
+          </div>
+          <div class="menu-time">60分</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">カット & ストレート髪質改善酸熱トリートメント</div>
+            <div class="menu-price">¥18,700</div>
+          </div>
+          <div class="menu-time">2時間半</div>
+        </div>
+
+        <div class="notice">
+          ※ 従来にはなかった高級トリートメント。薬剤は使用せず、アイロンの熱に反応し、内部に栄養が浸透。艶のある柔らかな髪質になります。
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">シールエクステ</h2>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">レミー毛最高級シールエクステ40枚</div>
+            <div class="menu-price">¥14,300</div>
+          </div>
+          <div class="menu-time">約2時間</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">レミー毛最高級シールエクステ60枚</div>
+            <div class="menu-price">¥20,460</div>
+          </div>
+          <div class="menu-time">約2時間</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">レミー毛最高級シールエクステ80枚</div>
+            <div class="menu-price">¥26,400</div>
+          </div>
+          <div class="menu-time">約3時間</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">ハイトーンエクステ追加</div>
+            <div class="menu-price">+¥1,100</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">カット</h2>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">レディースカット</div>
+            <div class="menu-price">¥5,500</div>
+          </div>
+          <div class="menu-time">90分</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">メンズカット</div>
+            <div class="menu-price">¥4,950</div>
+          </div>
+          <div class="menu-time">60分</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">Jr.カット（6歳～18歳まで）</div>
+            <div class="menu-price">¥3,850</div>
+          </div>
+          <div class="menu-time">60分</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-top">
+            <div class="menu-name">バングカット</div>
+            <div class="menu-price">¥1,100</div>
+          </div>
+          <div class="menu-time">10分</div>
+        </div>
+      </section>
+
+      <div id="access" class="access-box">
+        <h3 class="access-title">SALJU 津田沼</h3>
+
+        <p>
+          〒275-0026<br>
+          千葉県習志野市谷津1-18-47<br>
+          ライオンズマンション津田沼 第5 101
+        </p>
+
+        <p>JR津田沼駅 南口より徒歩6分</p>
+
+        <p><strong>営業時間 10:00 - 22:00</strong></p>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=千葉県習志野市谷津1-18-47"
+          class="map-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📍 Googleマップで見る
+        </a>
+      </div>
+
+      <div class="footer">© Salju</div>
+    </div>
+  </div>
+</body>
+</html>
